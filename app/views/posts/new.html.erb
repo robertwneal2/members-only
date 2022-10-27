@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Post</title>
+</head>
+<body>
+  <div><%= "Signed in user: #{current_user.username}" %></div> 
+  <%= form_with model: @post do |form| %>
+    <div>
+      <%= label(:post, :title, "Title:") %>
+      <%= text_field(:post, :title) %>
+    </div>
+    <div>
+      <%= label(:post, :body, "Body:") %>
+      <%= text_area(:post, :body) %>
+    </div>
+    <%= form.submit %>
+  <% end %>
+</body>
+</html>

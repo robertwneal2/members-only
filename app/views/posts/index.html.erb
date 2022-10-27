@@ -7,11 +7,13 @@
   <title>Posts</title>
 </head>
 <body>
-  <% if current_user %> 
+  <% if current_user %>
+  <%= "Signed in user: #{current_user.username}" %>
   <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <%= link_to "Create New Post", new_post_path, method: :delete %>
   <% else %>
-  <%= link_to "Sign In", new_user_session_path %>
-  <%= link_to  "Sign Up", new_user_registration_path %>
+  <div><%= link_to "Sign In", new_user_session_path %></div>
+  <div><%= link_to  "Sign Up", new_user_registration_path %></div>
   <% end %> 
   <h1>All Posts</h1>
   <% @posts.each do |post| %>
