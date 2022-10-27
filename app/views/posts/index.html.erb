@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posts</title>
+</head>
+<body>
+  <% if current_user %> 
+  <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <% else %>
+  <%= link_to "Sign In", new_user_session_path %>
+  <%= link_to  "Sign Up", new_user_registration_path %>
+  <% end %> 
+</body>
+</html>
